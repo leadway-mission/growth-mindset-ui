@@ -82,7 +82,7 @@ export default function Home({data}) {
       </Head>
 
       <main>
-        <div style={{textAlign:"center", padding:"50px"}}><h3>"It is hard to fail but it is worse never to have tried to succeed." <span style={{fontStyle: "italic"}}>Theodore Roosevelt</span></h3></div>
+        <div style={{textAlign:"center", padding:"50px"}}><h5>“In a growth mindset, challenges are exciting rather than threatening. So rather than thinking, oh, I’m going to reveal my weaknesses, you say, wow, here’s a chance to grow.” <span style={{fontStyle: "italic"}}> - Carol S. Dweck</span></h5></div>
         <div>
             <div>
               <CarouselSection/>
@@ -167,33 +167,33 @@ export default function Home({data}) {
                 <h3>Themes</h3>
                 <div>
                   <Row>
-                    <Col md={3} style={{height: "200px"}}>
+                    <Col md={3} sx={12}>
                         <h5>Teach Growth Mindset Explicitly</h5>
                         <div>I notice that teaching the concept of growth mindset helps nurture a growth mindset in the classroom, just like Carol Dweck recommended. Do not assume that every student in your classroom understands the concept.</div>
                         <Button href="/teach-growth-mindset">Read more</Button>
                     </Col>
-                    <Col md={3} style={{height: "200px"}}>
+                    <Col md={3} sx={12}>
                         <h5>Normalize Challenges</h5>
                         <div>Normalizing challenges promote and nurture a growth mindset. Most of my high achiever students have a low tolerance for productive struggle. They get frustrated easily.  I realized that students doing well in all subjects and paying attention does not mean they have a positive mindset towards challenges.</div>
                         <Button href="/normalize-challenges">Read more</Button>
                     </Col>
-                    <Col md={3}>
+                    <Col md={3} sx={12}>
                         <h5>Descriptive Feedback</h5>
-                        <div>As simple as feedback sounds, it is not all that easy to give descriptive and timely feedback that meets students' specific and unique needs, particularly with the concept of a growth mindset. Feedback is connected to promoting and nurturing a growth mindset as it helps students know what to do and how to get better at what they are doing. It increases student's engagement and motivation for learning. </div>
-                        <Button>Read more</Button>
+                        <div>As simple as feedback sounds, it is not all that easy to give descriptive and timely feedback that meets students' specific and unique needs, particularly with the concept of a growth mindset. </div>
+                        <Button href="/descriptive-feedback">Read more</Button>
                     </Col>
-                    <Col md={3}>
+                    <Col md={3} sx={12}>
                         <h5>Teacher's Growth Mindset</h5>
                         <div> Teaching the concept of a growth mindset helps me develop a growth mindset for teaching. This helps me cultivate an environment that promotes and nurtures a positive mindset towards learning, which helps nurture a growth mindset in the classroom.</div>
-                        <Button>Read more</Button>
+                        <Button href="/teacher-growth-mindset">Read more</Button>
                     </Col>
                   </Row>
                 </div>
               </div>
-              <div style={{padding:"100px", backgroundColor: "black", color: 'white'}}>
+              <div className={styles.interactiveSection}>
                 <Row>
                   <Col md={4}>
-                      <div><h3>Strategies</h3></div>
+                      <div style={{textAlign: 'center'}}><h3>Processes</h3></div>
                       <Draggable
                         axis="x"
                         handle=".handle"
@@ -238,18 +238,33 @@ export default function Home({data}) {
                           <div className={styles.draggableDiv}><h3>Teaching on GM</h3></div>
                         </div>
                       </Draggable>
+                      <Draggable
+                        axis="x"
+                        handle=".handle"
+                        defaultPosition={{x: 0, y: 0}}
+                        position={null}
+                        grid={[10, 10]}
+                        scale={1}
+                        onStart={handleStart}
+                        onDrag={handleDrag}
+                        onStop={handleStop}>
+                        <div className="handle">
+                          <div className={styles.draggableDiv}><h3>Normalize Challenges</h3></div>
+                        </div>
+                      </Draggable>
                       <div style={{textAlign: "center"}}><Button size="lg" onClick={() => router.reload()}>Reset</Button></div>
 
                   </Col>
 
                   <Col md={8} style={{textAlign: "right"}}>
-                    {imageStatue == 0 && <Image className={styles.fadeInImage} src="/images/seed.jpg" width="500" height="300" />}
-                    {imageStatue == 1 && <Image className={styles.fadeInImage} src="/images/growing1.jpeg" width="500" height="300" />}
-                    {imageStatue == 2 && <Image className={styles.fadeInImage} src="/images/growing2.jpeg" width="500" height="300" />}
-                    {imageStatue == 3 && <Image className={styles.fadeInImage} src="/images/grow.jpeg" width="500" height="300" />}
+                    {imageStatue == 0 && <Image className={styles.fadeInImage} src="/images/seed.jpg" width="500" height="400" />}
+                    {imageStatue == 1 && <Image className={styles.fadeInImage} src="/images/growing1.jpeg" width="500" height="400" />}
+                    {imageStatue == 2 && <Image className={styles.fadeInImage} src="/images/growing2.jpeg" width="500" height="400" />}
+                    {imageStatue == 3 && <Image className={styles.fadeInImage} src="/images/grow.jpeg" width="500" height="400" />}
 
                   </Col>
                 </Row>
+                <div style={{textAlign:"center", padding:"50px"}}><h5>“Becoming is better than being.” <span style={{fontStyle: "italic"}}> - Carol S. Dweck</span></h5></div>
               </div>
 
               <div className={styles.section}>

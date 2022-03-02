@@ -189,8 +189,9 @@
   padding: 10px;
   background-color: gray;
   margin: 10px;
-  border-radius: 30%;
+  border-radius: 50%;
   text-align: center;
+  width: 100%
 }
 .fadeInImage {
   animation: fadeIn 10s;
@@ -201,6 +202,22 @@
   border-radius: 30%;
   margin: 20px;
 
+}
+
+.subPage {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.subPage .header {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.interactiveSection {
+  padding: 100px;
+  background-color: black;
+  color: white;
 }
 @keyframes fadeIn {
   0% {opacity:0;}
@@ -222,5 +239,20 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .subPage {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .banner {
+    /* min-height: 100vh; */
+    padding: 2rem;
+    text-align: right;
+    background-color: gainsboro;
+  }
+  .interactiveSection {
+    padding: 30px;
+    background-color: black;
+    color: white;
   }
 }
